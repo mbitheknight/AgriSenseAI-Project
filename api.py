@@ -5,9 +5,9 @@ import pickle
 app = FastAPI()
 
 # Load datasets with predictions
-wholesale_df = pd.read_csv("wholesale_price_predictions.csv")
-retail_df = pd.read_csv("retail_price_predictions.csv")
-market_df = pd.read_csv("market_recommendations.csv")
+wholesale_df = pd.read_csv("Model Predictions/wholesale_price_predictions.csv")
+retail_df = pd.read_csv("Model Predictions/retail_price_predictions.csv")
+market_df = pd.read_csv("Model Predictions/market_recommendations.csv")
 
 # Load mappings
 with open("mappings.pkl", "rb") as f:
