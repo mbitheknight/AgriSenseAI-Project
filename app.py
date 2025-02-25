@@ -8,14 +8,14 @@ with open("mappings.pkl", "rb") as f:
     mappings = pickle.load(f)
 
 # Mappings: use human-readable names for dropdowns
-crop_mapping = mappings["Crop"]            # e.g., {"Maize": 1, "Tomatoes": 2, ...}
-county_mapping = mappings["County"]          # e.g., {"Nairobi": 47, "Garissa": 52, ...}
-market_reverse_mapping = mappings["Market_Reverse"]  # e.g., {40: "Garissa Main Market", ...}
+crop_mapping = mappings["Crop"]           
+county_mapping = mappings["County"]          
+market_reverse_mapping = mappings["Market_Reverse"]  
 
 # ---------- Load Prediction Data ----------
-wholesale_df = pd.read_csv("wholesale_price_predictions.csv")
-retail_df = pd.read_csv("retail_price_predictions.csv")
-market_df = pd.read_csv("market_recommendations.csv")
+wholesale_df = pd.read_csv("Model Predictions/wholesale_price_predictions.csv")
+retail_df = pd.read_csv("Model Predictions/retail_price_predictions.csv")
+market_df = pd.read_csv("Model Predictions/market_recommendations.csv")
 
 # ---------- Create Lookup Dictionaries ----------
 wholesale_dict = wholesale_df.set_index(["Crop_ID", "County_ID"])["Wholesale_Prediction"].to_dict()
